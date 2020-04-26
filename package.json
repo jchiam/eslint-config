@@ -1,0 +1,27 @@
+{
+  "name": "@jchiam/eslint-config",
+  "version": "1.0.0",
+  "description": "my personal ESLint rules",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jchiam/eslint-config.git"
+  },
+  "author": "Jonathan Chiam",
+  "dependencies": {
+    "@typescript-eslint/parser": "^2.11.0",
+    "eslint": "^6.7.2",
+    "typescript": "^3.7.3"
+  },
+  "peerDependencies": {
+    "eslint": "^6.0.0",
+    "@typescript-eslint/eslint-plugin": "^2.10.0",
+    "eslint-plugin-import": "^2.19.1",
+    "eslint-plugin-jest": "^23.1.1",
+    "eslint-plugin-react": "^7.17.0",
+    "eslint-plugin-react-hooks": "^2.3.0"
+  }
+}
