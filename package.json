@@ -12,16 +12,16 @@
   },
   "author": "Jonathan Chiam",
   "dependencies": {
-    "@typescript-eslint/parser": "^3.6.1",
-    "eslint": "^7.4.0",
-    "typescript": "^3.9.6"
+    "@typescript-eslint/parser": "^4.25.0",
+    "eslint": "^7.27.0",
+    "typescript": "^4.3.2"
   },
   "peerDependencies": {
-    "eslint": "^6.0.0",
-    "@typescript-eslint/eslint-plugin": "^2.10.0",
-    "eslint-plugin-import": "^2.19.1",
-    "eslint-plugin-jest": "^23.1.1",
-    "eslint-plugin-react": "^7.17.0",
-    "eslint-plugin-react-hooks": "^2.3.0"
+    "@typescript-eslint/eslint-plugin": "^4.25.0",
+    "eslint": "^7.27.0",
+    "eslint-plugin-import": "^2.23.3",
+    "eslint-plugin-jest": "^24.3.6",
+    "eslint-plugin-react": "^7.19.0",
+    "eslint-plugin-react-hooks": "^4.0.0"
   }
 }
