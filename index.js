@@ -1,12 +1,12 @@
 module.exports = {
   "parser":  "@typescript-eslint/parser",
   "extends": [
-    "plugin:@typescript-eslint/recommended",
     "plugin:react/recommended",
     "eslint:recommended",
     "plugin:import/react",
     "plugin:import/errors",
-    "plugin:import/warnings"
+    "plugin:import/warnings",
+    "plugin:@typescript-eslint/recommended"
   ],
   "plugins": ["react-hooks"],
   "env": {
