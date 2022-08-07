@@ -13,14 +13,14 @@
   "author": "Jonathan Chiam",
   "peerDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.0.0",
-    "eslint-plugin-import": "^2.25.0",
-    "eslint-plugin-jest": "^24.3.0",
-    "eslint-plugin-react": "^7.27.0",
-    "eslint-plugin-react-hooks": "^4.3.0"
+    "eslint-plugin-import": "^2.0.0",
+    "eslint-plugin-jest": "^26.0.0",
+    "eslint-plugin-react": "^7.0.0",
+    "eslint-plugin-react-hooks": "^4.0.0"
   },
   "devDependencies": {
-    "@typescript-eslint/parser": "^5.5.0",
-    "eslint": "^8.4.0",
-    "typescript": "^4.5.2"
+    "@typescript-eslint/parser": "^5.32.0",
+    "eslint": "^8.21.0",
+    "typescript": "^4.7.4"
   }
 }
