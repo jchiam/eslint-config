@@ -2,7 +2,7 @@
   "name": "@jchiam/eslint-config",
   "version": "3.0.3",
   "description": "my personal ESLint rules",
-  "main": "index.js",
+  "main": "recommended.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

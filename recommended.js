@@ -1,33 +1,24 @@
 module.exports = {
   "parser":  "@typescript-eslint/parser",
   "extends": [
-    "plugin:react/recommended",
     "eslint:recommended",
-    "plugin:import/react",
-    "plugin:import/errors",
-    "plugin:import/warnings",
+    "plugin:import/recommended",
+    "plugin:import/typescript",
     "plugin:@typescript-eslint/recommended"
   ],
-  "plugins": ["react-hooks"],
   "env": {
     "es6": true,
     "node": true,
     "browser": true
   },
   "parserOptions": {
-    "ecmaVersion": 2018,
-    "ecmaFeatures": {
-      "jsx": true
-    }
+    "ecmaVersion": 2018
   },
   "rules": {
-    "react/prop-types": "off",
     "@typescript-eslint/array-type": ["error", { "default": "generic" }],
     "@typescript-eslint/explicit-function-return-type": "off",
     "@typescript-eslint/indent": ["error", 2, { "SwitchCase": 1 }],
     "@typescript-eslint/no-explicit-any": "off",
-    "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "warn",
     "eqeqeq": ["error", "smart"],
     "no-else-return": "warn",
     "no-multi-spaces": ["error", { "ignoreEOLComments": true }],
@@ -46,7 +37,6 @@ module.exports = {
     "func-call-spacing": "error",
     "func-style": ["error", "declaration", { "allowArrowFunctions": true }],
     "indent": ["error", 2, { "SwitchCase": 1 }],
-    "jsx-quotes": "error",
     "key-spacing": "error",
     "keyword-spacing": "error",
     "lines-around-comment": ["error", { "beforeBlockComment": true, "allowBlockStart": true }],
@@ -94,12 +84,9 @@ module.exports = {
   "settings": {
     "import/resolver": {
       "node": {
-        "extensions": [".js", ".jsx", ".ts", ".tsx", ".d.ts"],
+        "extensions": [".js", ".ts", ".d.ts"],
         "moduleDirectory": ["node_modules", "src"]
       }
-    },
-    "react": {
-      "version": "detect"
     }
   }
 };
