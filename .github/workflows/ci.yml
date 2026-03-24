@@ -1,0 +1,38 @@
+name: CI
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+jobs:
+  test:
+    name: Node.js ${{ matrix.node-version }}
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [20, 22, 24]
+
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Validate configs load
+        run: |
+          node --input-type=module --eval "
+            import recommended from './recommended.js';
+            import react from './react.js';
+            if (!Array.isArray(recommended)) throw new Error('recommended.js must export an array');
+            if (!Array.isArray(react)) throw new Error('react.js must export an array');
+            console.log('recommended.js: ok (' + recommended.length + ' config objects)');
+            console.log('react.js: ok (' + react.length + ' config objects)');
+          "
