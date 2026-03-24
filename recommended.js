@@ -1,10 +1,10 @@
-const js = require('@eslint/js');
-const tseslint = require('typescript-eslint');
-const importPlugin = require('eslint-plugin-import');
-const stylistic = require('@stylistic/eslint-plugin');
-const globals = require('globals');
+import js from '@eslint/js';
+import tseslint from 'typescript-eslint';
+import importPlugin from 'eslint-plugin-import';
+import stylistic from '@stylistic/eslint-plugin';
+import globals from 'globals';
 
-module.exports = [
+export default [
   js.configs.recommended,
   ...tseslint.configs.recommended,
   importPlugin.flatConfigs.recommended,

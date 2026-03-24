@@ -1,8 +1,8 @@
-const reactPlugin = require('eslint-plugin-react');
-const reactHooksPlugin = require('eslint-plugin-react-hooks');
-const stylistic = require('@stylistic/eslint-plugin');
+import reactPlugin from 'eslint-plugin-react';
+import reactHooksPlugin from 'eslint-plugin-react-hooks';
+import stylistic from '@stylistic/eslint-plugin';
 
-module.exports = [
+export default [
   reactPlugin.configs.flat.recommended,
   {
     plugins: {

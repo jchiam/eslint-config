@@ -23,26 +23,26 @@ npm i -D @jchiam/eslint-config eslint typescript-eslint eslint-plugin-import
 Create `eslint.config.js` in your project root:
 
 ```js
-// TypeScript project
-const jchiamConfig = require('@jchiam/eslint-config');
+// eslint.config.js — TypeScript project
+import jchiamConfig from '@jchiam/eslint-config';
 
-module.exports = [...jchiamConfig];
+export default [...jchiamConfig];
 ```
 
 ```js
-// React + TypeScript project
-const jchiamConfig = require('@jchiam/eslint-config');
-const jchiamReact = require('@jchiam/eslint-config/react');
+// eslint.config.js — React + TypeScript project
+import jchiamConfig from '@jchiam/eslint-config';
+import jchiamReact from '@jchiam/eslint-config/react';
 
-module.exports = [...jchiamConfig, ...jchiamReact];
+export default [...jchiamConfig, ...jchiamReact];
 ```
 
 Override rules by appending a config object to the array:
 
 ```js
-const jchiamConfig = require('@jchiam/eslint-config');
+import jchiamConfig from '@jchiam/eslint-config';
 
-module.exports = [
+export default [
   ...jchiamConfig,
   {
     rules: {
@@ -91,7 +91,7 @@ npm uninstall @typescript-eslint/eslint-plugin @typescript-eslint/parser
 Config format changes from `.eslintrc.js`:
 
 ```js
-// Before
+// Before (.eslintrc.js)
 module.exports = {
   extends: ['@jchiam/eslint-config/recommended'],
 };
@@ -101,8 +101,8 @@ To `eslint.config.js`:
 
 ```js
 // After
-const jchiamConfig = require('@jchiam/eslint-config');
-module.exports = [...jchiamConfig];
+import jchiamConfig from '@jchiam/eslint-config';
+export default [...jchiamConfig];
 ```
 
 **Rule changes:**

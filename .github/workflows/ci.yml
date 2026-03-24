@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [18, 20, 22]
+        node-version: [20, 22, 24]
 
     steps:
       - uses: actions/checkout@v6
@@ -28,9 +28,9 @@ jobs:
 
       - name: Validate configs load
         run: |
-          node -e "
-            const recommended = require('./recommended.js');
-            const react = require('./react.js');
+          node --input-type=module --eval "
+            import recommended from './recommended.js';
+            import react from './react.js';
             if (!Array.isArray(recommended)) throw new Error('recommended.js must export an array');
             if (!Array.isArray(react)) throw new Error('react.js must export an array');
             console.log('recommended.js: ok (' + recommended.length + ' config objects)');
