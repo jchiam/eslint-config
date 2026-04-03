@@ -72,7 +72,7 @@ export default [
       '@stylistic/comma-style': 'error',
       '@stylistic/computed-property-spacing': 'error',
       '@stylistic/eol-last': 'error',
-      '@stylistic/func-call-spacing': 'error',
+      '@stylistic/function-call-spacing': 'error',
       '@stylistic/indent': ['error', 2, { SwitchCase: 1 }],
       '@stylistic/key-spacing': 'error',
       '@stylistic/keyword-spacing': 'error',
