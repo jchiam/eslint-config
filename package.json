@@ -1,6 +1,6 @@
 {
   "name": "@jchiam/eslint-config",
-  "version": "5.0.1",
+  "version": "5.0.2",
   "description": "my personal ESLint rules",
   "type": "module",
   "main": "recommended.js",
