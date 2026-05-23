@@ -102,7 +102,7 @@ export default [
     settings: {
       'import/resolver': {
         node: {
-          extensions: ['.js', '.ts', '.d.ts'],
+          extensions: ['.js', '.jsx', '.ts', '.tsx', '.d.ts'],
           moduleDirectory: ['node_modules', 'src'],
         },
       },

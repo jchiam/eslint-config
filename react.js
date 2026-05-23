@@ -1,9 +1,9 @@
-import reactPlugin from 'eslint-plugin-react';
+import eslintReact from '@eslint-react/eslint-plugin';
 import reactHooksPlugin from 'eslint-plugin-react-hooks';
 import stylistic from '@stylistic/eslint-plugin';
 
 export default [
-  reactPlugin.configs.flat.recommended,
+  eslintReact.configs.recommended,
   {
     plugins: {
       '@stylistic': stylistic,
@@ -17,21 +17,9 @@ export default [
       },
     },
     rules: {
-      'react/prop-types': 'off',
       'react-hooks/rules-of-hooks': 'error',
       'react-hooks/exhaustive-deps': 'warn',
       '@stylistic/jsx-quotes': 'error',
-    },
-    settings: {
-      'import/resolver': {
-        node: {
-          extensions: ['.js', '.jsx', '.ts', '.tsx', '.d.ts'],
-          moduleDirectory: ['node_modules', 'src'],
-        },
-      },
-      react: {
-        version: 'detect',
-      },
     },
   },
 ];
