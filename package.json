@@ -4,6 +4,10 @@
   "description": "my personal ESLint rules",
   "type": "module",
   "main": "recommended.js",
+  "files": [
+    "recommended.js",
+    "react.js"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -16,14 +20,14 @@
     "@eslint-react/eslint-plugin": "^1.0.0",
     "@eslint/js": "^9.0.0",
     "@stylistic/eslint-plugin": "^5.0.0",
-    "globals": "^17.0.0"
+    "globals": "^17.6.0"
   },
   "peerDependencies": {
     "eslint": "^9.0.0 || ^10.0.0",
-    "typescript-eslint": "^8.0.0",
     "eslint-plugin-import": "^2.29.0",
     "eslint-plugin-jest": "^29.0.0",
-    "eslint-plugin-react-hooks": "^7.0.0"
+    "eslint-plugin-react-hooks": "^7.0.0",
+    "typescript-eslint": "^8.0.0"
   },
   "peerDependenciesMeta": {
     "eslint-plugin-jest": {
@@ -36,8 +40,8 @@
   "devDependencies": {
     "eslint": "^9.0.0",
     "eslint-plugin-import": "^2.32.0",
-    "eslint-plugin-react-hooks": "^7.0.0",
-    "typescript": "^5.0.0",
-    "typescript-eslint": "^8.0.0"
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.59.4"
   }
 }
