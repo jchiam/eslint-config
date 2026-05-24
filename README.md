@@ -6,13 +6,12 @@ My personal shareable ESLint config. Targets TypeScript projects, with an option
 
 ## Requirements
 
-- ESLint 9 (ESLint 10 not yet supported due to `eslint-plugin-import` peer dep constraints)
+- ESLint 9 or 10
 - `typescript-eslint` ^8
 - `eslint-plugin-import` ^2.29
 
 React projects additionally need:
-- `eslint-plugin-react` ^7.32
-- `eslint-plugin-react-hooks` ^5
+- `eslint-plugin-react-hooks` ^7
 
 ## Usage
 
@@ -65,7 +64,7 @@ export default [
 ### `react.js`
 
 Extends `recommended.js` intent with:
-- [`eslint-plugin-react`](https://github.com/jsx-eslint/eslint-plugin-react) recommended (with `react/prop-types` off for TypeScript)
+- [`@eslint-react/eslint-plugin`](https://github.com/Rel1cx/eslint-react) recommended rules (bundled — no separate install needed)
 - [`eslint-plugin-react-hooks`](https://github.com/facebook/react) rules of hooks + exhaustive deps
 
 ## Breaking Changes
