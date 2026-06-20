@@ -30,10 +30,11 @@ export default [...jchiamConfig];
 
 ```js
 // eslint.config.js — React + TypeScript project
-import jchiamConfig from '@jchiam/eslint-config';
+// The /react config is self-contained — it includes the base config, so spread
+// it alone. Do not also spread the base, or it will be included twice.
 import jchiamReact from '@jchiam/eslint-config/react';
 
-export default [...jchiamConfig, ...jchiamReact];
+export default [...jchiamReact];
 ```
 
 Override rules by appending a config object to the array:
@@ -63,11 +64,30 @@ export default [
 
 ### `react.js`
 
-Extends `recommended.js` intent with:
+Self-contained — includes everything in `recommended.js`, plus:
 - [`@eslint-react/eslint-plugin`](https://github.com/Rel1cx/eslint-react) recommended rules (bundled — no separate install needed)
 - [`eslint-plugin-react-hooks`](https://github.com/facebook/react) rules of hooks + exhaustive deps
 
+Spread it on its own (`[...jchiamReact]`); there is no need to also spread the base config.
+
 ## Breaking Changes
+
+### v6 to v7
+
+The `/react` config is now **self-contained** — it includes the base config, so React projects spread a single array instead of composing base + react themselves.
+
+```js
+// Before (v6)
+import jchiamConfig from '@jchiam/eslint-config';
+import jchiamReact from '@jchiam/eslint-config/react';
+export default [...jchiamConfig, ...jchiamReact];
+
+// After (v7)
+import jchiamReact from '@jchiam/eslint-config/react';
+export default [...jchiamReact];
+```
+
+Spreading both as before still "works" but includes the base config twice. Non-React projects are unaffected — keep using `recommended` as before.
 
 ### v5 to v6
 

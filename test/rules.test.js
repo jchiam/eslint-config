@@ -11,7 +11,6 @@ import react from '../react.js';
 // where a silent regression is both most likely and most invisible. Upstream
 // plugin defaults are not re-tested here.
 
-const combined = [...recommended, ...react];
 const linter = new Linter({ configType: 'flat' });
 
 // Fixtures carry incidental violations (eol-last, no-unused-vars, ...), so we
@@ -147,16 +146,24 @@ const fixtures = [
     fires: ['import/no-duplicates'],
   },
 
-  // React layer (spread after the base, as consumers do)
+  // React config is self-contained: it includes the base, so a base rule must
+  // still fire through react.js alone. This is the proof the increment was
+  // deepened — react owns the base + ordering, consumers spread one array.
+  {
+    name: 'react config includes the base (array-type fires)',
+    config: react, filename: 'C.tsx',
+    code: 'const x: number[] = [];\nconsole.log(x);\n',
+    fires: ['@typescript-eslint/array-type'],
+  },
   {
     name: 'react-hooks flags conditional hook calls',
-    config: combined, filename: 'C.tsx',
+    config: react, filename: 'C.tsx',
     code: 'export function C() {\n  if (true) { useState(); }\n  return null;\n}\n',
     fires: ['react-hooks/rules-of-hooks'],
   },
   {
     name: 'jsx-quotes is enforced',
-    config: combined, filename: 'C.tsx',
+    config: react, filename: 'C.tsx',
     code: "export const C = () => <div className='a' />;\n",
     fires: ['@stylistic/jsx-quotes'],
   },
