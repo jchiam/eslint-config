@@ -9,7 +9,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Architecture
 
 - **`recommended.js`** — the default/`main` export. Base config for any TypeScript project. Composes `@eslint/js` recommended, `typescript-eslint` recommended, `eslint-plugin-import-x` (recommended + typescript settings, re-registered under the `import` namespace so rules stay `import/...`; resolver settings use the `import-x/` prefix), and an opinionated rule block: TS rules, best-practice rules, ES6+ rules, and all formatting rules via `@stylistic/eslint-plugin`.
-- **`react.js`** — the `/react` subpath export. A **standalone increment**, not a superset: it does *not* re-include `recommended.js`. Consumers spread both (`[...jchiamConfig, ...jchiamReact]`). Adds `@eslint-react/eslint-plugin` recommended, `eslint-plugin-react-hooks`, and JSX stylistic rules.
+- **`react.js`** — the `/react` subpath export. **Self-contained**: it spreads `recommended.js` first, then adds `@eslint-react/eslint-plugin` recommended, `eslint-plugin-react-hooks`, and JSX stylistic rules. React consumers spread a single array (`[...jchiamReact]`); they must *not* also spread `recommended` or the base is included twice. The ordering invariant (base before the React layer) lives here, not in consumer config.
 
 ### Dependency boundaries (important when editing rules)
 
